@@ -6,23 +6,34 @@
   },
   "readAlerts": true,
   "discordStatus": "online",
+  "eventsCorrectChance": 0.65,
   "cooldowns": {
-    "buttonClickDelay": {
-      "minDelay": 300,
-      "maxDelay": 500
-    },
-    "commandInterval": {
-      "minDelay": 2000,
-      "maxDelay": 4000
-    }
+      "buttonClickDelay": {
+        "minSeconds": 0.3,
+        "maxSeconds": 0.5
+      },
+      "commandInterval": {
+        "minSeconds": 0.2,
+        "maxSeconds": 0.4
+      },
+      "breakCooldown": {
+        "minHours": 0.2,
+        "maxHours": 1.6
+      },
+      "breakDuration": {
+        "minHours": 1,
+        "maxHours": 1.3
+      },
+      "startDelay": {
+        "minMinutes": 1,
+        "maxMinutes": 2
+      },
+      "eventDelay": {
+        "minSeconds":  3,
+        "maxSeconds": 7
+      }
   },
-  "accounts": [
-    {
-      "token": "",
-      "channelID": "",
-      "state": true
-    }
-  ],
+  "accounts": [],
   "autoBuy": {
     "huntingRifle": {
       "state": true,
@@ -34,7 +45,18 @@
     },
     "lifeSavers": {
       "state": true,
-      "amount": 1
+      "amount": 2
+    }
+  },
+  "autoUse": {
+    "apple": {
+      "state": false
+    },
+    "luckyHorseshoe": {
+      "state": false
+    },
+    "pizzaSlice": {
+      "state": false
     }
   },
   "commands": {
@@ -46,6 +68,12 @@
     "beg": {
       "state": false,
       "delay": 40
+    },
+    "blackjack": {
+      "state": false,
+      "delay": 20,
+      "amount": "10k",
+      "manuallyRunCommands": true
     },
     "crime": {
       "state": false,
@@ -79,6 +107,26 @@
     "dig": {
       "state": false,
       "delay": 30
+    },
+    "fish": {
+      "state": false,
+      "delay": 30,
+      "fishOnly": true,
+      "fishOnlyDelay": {
+        "minSeconds": 2,
+        "maxSeconds": 6
+      },
+      "autoCompleteTasks": true,
+      "autoCompleteTradeOffers": false,
+      "sellCoinsValue": 100000,
+      "fishLocation": [
+        "Underwater Sanctuary",
+        "Wily River",
+        "Vertigo Beach",
+        "Scurvy Waters",
+        "Camp Guillermo",
+        "Northpoint Cabin"
+      ]
     },
     "highlow": {
       "state": false,
